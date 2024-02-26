@@ -87,21 +87,27 @@ use Illuminate\Support\Facades\Route; //istilah Laravel untuk menyebut class ban
 //     return view('polinema.dosen',['dosen' => $arrDosen]);
 // });
 
-//==CONTROLLER==//
-Route::get('/hello', [WelcomeController::class,'hello']);
+// //==CONTROLLER==//
+// Route::get('/hello', [WelcomeController::class,'hello']);
 
-Route::get('/', [PageController::class,'index']);
-Route::get('/about', [PageController::class,'about']);
-Route::get('/articles/{id}', [PageController::class,'articles']);
+// Route::get('/', [PageController::class,'index']);
+// Route::get('/about', [PageController::class,'about']);
+// Route::get('/articles/{id}', [PageController::class,'articles']);
 
-Route::get('/',[HomeController::class,'index']);
-Route::get('/about',[AboutController::class,'about']);
-Route::get('/articles/{id}',[ArticlesController::class,'articles']);
+// Route::get('/',[HomeController::class,'index']);
+// Route::get('/about',[AboutController::class,'about']);
+// Route::get('/articles/{id}',[ArticlesController::class,'articles']);
 
 // Route::resource('photos', PhotoController::class);
 // Route::resource('photos', PhotoController::class)->only([
 //     'index','show'
 // ]);
-Route::resource('photos', PhotoController::class)->except([
-    'create','store','update','destroy'
-]);
+// Route::resource('photos', PhotoController::class)->except([
+//     'create','store','update','destroy'
+// ]);
+
+//==VIEW==//
+// Route::get('/greeting', function(){
+//     return view('blog.hello', ['name' => 'Ereen']);
+// });
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
